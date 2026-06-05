@@ -47,7 +47,10 @@ RDEPENDS:${PN}-gstreamer = " \
 
 # Python — bindings for foundation and Zenoh libraries
 RDEPENDS:${PN}-python = " \
+    python3-pip \
     python3-zenoh \
+    python3-edgefirst-client \
+    python3-edgefirst-profiler \
     edgefirst-tflite \
     edgefirst-schemas-python \
     edgefirst-hal-python \
