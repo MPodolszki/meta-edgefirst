@@ -25,6 +25,8 @@ RDEPENDS:${PN}-zenoh = " \
     ${PN} \
     zenoh-c \
     zenohd \
+    edgefirst-client \
+    edgefirst-profiler \
     edgefirst-schemas \
     edgefirst-camera \
     edgefirst-model \
@@ -47,6 +49,7 @@ RDEPENDS:${PN}-gstreamer = " \
 
 # Python — bindings for foundation and Zenoh libraries
 RDEPENDS:${PN}-python = " \
+    python3-pip \
     python3-zenoh \
     edgefirst-tflite \
     edgefirst-schemas-python \

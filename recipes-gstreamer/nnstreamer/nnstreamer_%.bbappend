@@ -35,9 +35,10 @@ PACKAGECONFIG[ara2] = "\
     , \
 "
 
-# Enable Ara-2 on platforms with Kinara PCIe NPU support
-PACKAGECONFIG_SOC:mx8mp-nxp-bsp:append = " ara2"
-PACKAGECONFIG_SOC:mx9-nxp-bsp:append = " ara2"
+# Ara-2 is optional and not present in all BSP manifests.
+# Enable it explicitly via MACHINE_FEATURES ("ara2") or
+# PACKAGECONFIG:append:pn-nnstreamer = " ara2" in local.conf.
+PACKAGECONFIG:append = "${@bb.utils.contains('MACHINE_FEATURES', 'ara2', ' ara2', '', d)}"
 
 # Package the ara2 tensor_filter sub-plugin
 PACKAGES =+ "${@bb.utils.contains('PACKAGECONFIG', 'ara2', '${PN}-ara2', '', d)}"
